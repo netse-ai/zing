@@ -1,0 +1,7 @@
+{
+  "name": "zing",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
