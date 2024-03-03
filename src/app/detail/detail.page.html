@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-row>
+      <ion-button color="dark" (click)="navigateBack()">
+        <ion-icon name="arrow-back" router-direction="back"></ion-icon>
+      </ion-button>
+      <ion-title>detail</ion-title>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-img [src]="photo.webviewPath" style="height: 50vh;
+       margin-left: auto;
+       margin-right: 1rem;
+       margin-top: 0.5rem;
+       margin-bottom: 0.5rem;
+       "></ion-img>
+  <ion-list lines="full">
+    <ion-item>some item here</ion-item>
+    <ion-item>some item here</ion-item>
+    <ion-item>some item here</ion-item>
+    <ion-item>some item here</ion-item>
+    <ion-item>total</ion-item>
+  </ion-list>
+</ion-content>

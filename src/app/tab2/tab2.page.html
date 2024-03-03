@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Photo Gallery
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,35 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+      <ion-title size="large">Photo Gallery</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-content>
+    <ion-list lines="full">
+      <ion-item *ngFor="let photo of photoService.photos; index as position" (click)="navigateToDetail(photo)">
+        <ion-text>
+          Photo {{position + 1}}
+        </ion-text>
+        <ion-img [src]="photo.webviewPath" style="height: 25vh;
+         margin-left: auto;
+         margin-right: 1rem;
+         margin-top: 0.5rem;
+         margin-bottom: 0.5rem;
+         "></ion-img>
+      </ion-item>
+    </ion-list>
+  <ion-content>
+    <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+      <ion-fab-button (click)="addPhotoToGallery()">
+        <ion-icon name="camera"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </ion-content>
+  <ion-content>
+    <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+      <ion-fab-button (click)="clearStorage()">
+        <ion-icon name="trash"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </ion-content>
 </ion-content>
